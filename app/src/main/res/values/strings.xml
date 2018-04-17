@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">VideoGameLibraryAndroidApp</string>
+    <string name="genre_item_type">Genre - %1$s</string>
+    <string name="due_date">Due Date: %1$s</string>
+    <string name="game_name">Game Name</string>
 </resources>
