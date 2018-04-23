@@ -3,8 +3,8 @@ package com.example.anthonyeisenback.videogamelibraryandroidapp;
 import android.app.Application;
 import android.arch.persistence.room.Room;
 
-public class VideoGameData extends Application {
-    private VideoGameData database;
+public class VideoGameApplication extends Application {
+    private VideoGameDatabase database;
 
     public static String DATABASE_NAME = "video_game_database";
 
@@ -12,12 +12,12 @@ public class VideoGameData extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Room.databaseBuilder(getApplicationContext(),
+        database = Room.databaseBuilder(getApplicationContext(),
                 VideoGameDatabase.class, DATABASE_NAME).
                 allowMainThreadQueries().build();
     }
 
-    public VideoGameData getDatabase() {
+    public VideoGameDatabase getDatabase() {
         return database;
     }
 }

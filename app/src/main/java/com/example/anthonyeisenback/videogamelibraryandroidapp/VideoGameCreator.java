@@ -4,6 +4,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import java.util.Date;
+
 @Entity
 public class VideoGameCreator {
 
@@ -14,6 +16,7 @@ public class VideoGameCreator {
     private String gameGenre;
     private String gameDescription;
     private boolean isCheckedOut;
+    private Date date;
 
     @NonNull
     public int getId() {
@@ -32,11 +35,12 @@ public class VideoGameCreator {
         isCheckedOut = checkedOut;
     }
 
-    public VideoGameCreator(String gameName, String gameGenre, String gameDescription, boolean isCheckedOut) {
+    public VideoGameCreator(String gameName, String gameGenre, String gameDescription, boolean isCheckedOut, Date date) {
         this.gameName = gameName;
         this.gameGenre = gameGenre;
         this.gameDescription = gameDescription;
         this.isCheckedOut = isCheckedOut;
+        this.date = date;
     }
 
 
@@ -54,6 +58,13 @@ public class VideoGameCreator {
     }
 
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }
 
 

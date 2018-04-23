@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:elevation="5dp">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_game_to_list_floating_button"
@@ -13,10 +15,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:clickable="true"
+        android:elevation="5dp"
         app:backgroundTint="@color/colorPrimary"
+        app:elevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/genre_edittext"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
@@ -24,21 +28,21 @@
         android:id="@+id/add_name_to_game_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Game Title"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/genre_edittext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Genre"
         android:inputType="text"

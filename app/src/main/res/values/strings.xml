@@ -3,4 +3,12 @@
     <string name="genre_item_type">Genre - %1$s</string>
     <string name="due_date">Due Date: %1$s</string>
     <string name="game_name">Game Name</string>
+    <string name="checked_in">Game is checked in!</string>
+    <string name="check_in_yon">Are you sure you want to check in this game?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete_question">Delete this game?</string>
+    <string name="delete_title">Delete Game?</string>
+    <string name="deleted">Deleted</string>
+    <string name="add_game">Add game</string>
 </resources>
