@@ -22,7 +22,6 @@ public class AddGameFragment extends android.support.v4.app.Fragment {
 
     @BindView(R.id.genre_edittext)
     protected EditText genre;
-
     @BindView(R.id.add_name_to_game_editText)
     protected EditText gameName;
     private VideoGameDatabase videoGameDatabase;
@@ -63,7 +62,7 @@ public class AddGameFragment extends android.support.v4.app.Fragment {
             addGameToDataBase(genre.getText().toString(), gameName.getText().toString(),"");
         }
     }
-    private void addGameToDataBase(final String gameName, final String genre, final String description) {
+    private void addGameToDataBase(final String genre, final String gameName, final String description) {
         VideoGameCreator videoGame = new VideoGameCreator(gameName, genre, description, false, new Date());
         videoGameDatabase.videoGameDAO().addVideoGame(videoGame);
         activityCallback.addClicked();

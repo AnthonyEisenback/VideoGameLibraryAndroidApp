@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements com.example.antho
 
     @Override
     public void addClicked() {
-        final android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         while (fragmentManager.getBackStackEntryCount() > 0) {
             fragmentManager.popBackStackImmediate();
         }

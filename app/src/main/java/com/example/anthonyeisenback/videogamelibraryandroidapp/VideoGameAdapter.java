@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.text.SimpleDateFormat;
@@ -43,8 +44,8 @@ public class VideoGameAdapter extends RecyclerView.Adapter<VideoGameAdapter.View
     public void onBindViewHolder(@NonNull VideoGameAdapter.ViewHolder holder, int position) {
         holder.bind(videoGameCreatorList.get(position));
 
-        holder.itemView.setOnClickListener(holder.onClick(videoGameCreatorList.get(position)));
-//        holder.itemView.setOnLongClickListener((View.OnLongClickListener) holder.onClick(videoGameCreatorList.get(position)));
+        holder.rowLayout.setOnClickListener(holder.onRowClicked(videoGameCreatorList.get(position)));
+        holder.rowLayout.setOnLongClickListener(holder.onRowLongClicked(videoGameCreatorList.get(position)));
     }
 
     @Override
@@ -80,10 +81,6 @@ public class VideoGameAdapter extends RecyclerView.Adapter<VideoGameAdapter.View
             String genre = String.format(res.getString(R.string.genre_item_type), videoGame.getGameGenre());
             gameTitle.setText(videoGame.getGameName());
             genreItem.setText(genre);
-
-        }
-
-        public void bind(int position) {
 
         }
 
@@ -129,6 +126,25 @@ public class VideoGameAdapter extends RecyclerView.Adapter<VideoGameAdapter.View
                 rowLayout.setBackgroundResource(R.color.colorSpecialGreen);
 
             }
+        }
+
+        public View.OnClickListener onRowClicked(final VideoGameCreator videoGameCreator) {
+            return new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(itemView.getContext(), videoGameCreator.getGameName(), Toast.LENGTH_SHORT).show();
+                }
+            };
+        }
+
+        public View.OnLongClickListener onRowLongClicked(final VideoGameCreator videoGameCreator) {
+            return new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Toast.makeText(itemView.getContext(), videoGameCreator.getGameGenre(), Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            };
         }
     }
 
